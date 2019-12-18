@@ -19,6 +19,7 @@ service: weatherReport
 # $ npm install
 provider:
   name: openwhisk
+ignore_certs: true
 
 # you can add packaging information here
 #package:
