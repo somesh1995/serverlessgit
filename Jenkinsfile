@@ -58,9 +58,4 @@ pipeline {
             }
         }
     }
-    post {
-        failure {
-            mail to: 'shzshi@gmail.com', subject: 'Build failed', body: 'Please fix!'
-        }
-    }
 }
