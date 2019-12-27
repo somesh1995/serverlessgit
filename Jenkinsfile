@@ -16,8 +16,8 @@ pipeline {
         }
         stage('Deploy to Dev') {
             environment {
-                OW_AUTH = credentials('OPENWHISK_DEV_AUTH')
-                OW_APIHOST = credentials('OW_APIHOST')
+                OW_AUTH = credentials('API AUTH')
+                OW_APIHOST = credentials('API HOST')
             }
                 steps {
                    sh '''serverless deploy -v'''
@@ -25,8 +25,8 @@ pipeline {
         }
         stage('Deploy to SIT') {
             environment {
-                OW_AUTH = credentials('OPENWHISK_SIT_AUTH')
-                OW_APIHOST = credentials('OW_APIHOST')
+                OW_AUTH = credentials('API AUTH')
+                OW_APIHOST = credentials('API HOST')
             }
                 steps {
                    sh '''serverless deploy -v'''
@@ -34,8 +34,8 @@ pipeline {
         }
         stage('Deploy to Pre-Prod') {
             environment {
-                OW_AUTH = credentials('OPENWHISK_PRE_PROD_AUTH')
-                OW_APIHOST = credentials('OW_APIHOST')
+                OW_AUTH = credentials('API AUTH')
+                OW_APIHOST = credentials('API HOST')
             }
                 steps {
                    sh '''serverless deploy -v'''
@@ -50,8 +50,8 @@ pipeline {
         }
         stage('Deploy to Production') {
             environment {
-                OW_AUTH = credentials('OPENWHISK_PROD_AUTH')
-                OW_APIHOST = credentials('OW_APIHOST')
+                OW_AUTH = credentials('API AUTH')
+                OW_APIHOST = credentials('API HOST')
             }
             steps {
                sh '''serverless deploy -v'''
